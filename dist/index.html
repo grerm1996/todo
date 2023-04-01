@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to-do list</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+
+<div id="overall">
+    <div id="top"><h1>to-do list</h1></div>
+    
+    <div id="content">
+        <div class="sidebar">
+            <h3>PROJECTS</h3>
+            <ul id="projectlist">
+                <li id='Untitled' class='activeproj'>Untitled <span class="material-symbols-outlined delprojbtn" title='Delete project'>delete</span></li>
+            </ul>
+            <p id="newprojbtn"><span class="material-symbols-outlined">add_box</span> Add new project</p>
+        </div>
+        
+        
+        <div id="center">
+            <div id="headerslot"><h1 id='header'>Untitled <span class="material-symbols-outlined" id='projrenamer'>edit_square</span></h1></div>
+            <div class="formContainer">
+                <form id='form'>
+                <div>
+                <label for="taskname">TASK</label>
+                <input type="text" id="taskname" maxlength=20 required>
+                </div>
+    
+                <div>
+                <label for="taskdate">DUE DATE</label>
+                <input type="date" id="taskdate" required>
+                </div>
+    
+                <button id="addbtn" type='submit'>Add Task</button>
+                </form>
+            </div>
+
+            <div id='container'><table id='tasktable'></table></div>
+    </div>
+
+</div>
+
+
+
+
+<script src="main.js"></script>
+
+    
+</body>
+</html>
