@@ -34,13 +34,27 @@ let setupRenameButton = () => {
   projrenamebtn.addEventListener('click', projRenamer);
 };
 
+// delete task button
+let deleteTask = (e) => {
+  let relevantitems = array.filter((element) => element.project == currentproj);
+  let deleted = array.findIndex(item => item.task == e.target.id);
+  array.splice(deleted, 1);
+  tableRefresh();
+};
+
 // mechanism to create one row in table
 const createRow = (element) => {
   const row = tasktable.insertRow(0);
   const cell1 = row.insertCell(0);
   const cell2 = row.insertCell(1);
+  const cell3 = row.insertCell(2);
   cell1.textContent = element.task;
   cell2.innerHTML = element.date;
+  let delTaskBtn = d.createElement('span');
+  cell3.appendChild(delTaskBtn);
+  delTaskBtn.innerHTML = `X`;
+  delTaskBtn.setAttribute('id', `${element.task}`);
+  delTaskBtn.addEventListener('click', deleteTask);
 };
 
 // the table updater
